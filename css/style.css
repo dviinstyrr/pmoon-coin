@@ -9,156 +9,40 @@
     --font-body: 'Roboto', sans-serif;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--bg-dark);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    line-height: 1.6;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background-color: var(--bg-dark); color: var(--text-primary); font-family: var(--font-body); line-height: 1.6; }
 
 /* 2. HEADER & NAVIGATION */
-.main-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 700;
-    text-decoration: none;
-    z-index: 1001;
-}
-
+.main-header { display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background-color: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
+.logo { display: flex; align-items: center; gap: 10px; font-family: var(--font-heading); font-size: 24px; font-weight: 700; text-decoration: none; z-index: 1001; }
 .logo-svg { height: 30px; width: 30px; fill: var(--accent-primary); }
 .logo span { color: #FFFFFF; }
-
-.nav-open-btn, .nav-close-btn {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-.nav-open-btn svg, .nav-close-btn svg {
-    width: 30px;
-    height: 30px;
-    stroke: var(--text-primary);
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-}
-.main-nav a {
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
+.nav-open-btn, .nav-close-btn { display: none; background: none; border: none; cursor: pointer; }
+.nav-open-btn svg, .nav-close-btn svg { width: 30px; height: 30px; stroke: var(--text-primary); }
+.main-nav ul { list-style: none; display: flex; gap: 30px; }
+.main-nav a { color: var(--text-primary); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
 .main-nav a:hover { color: var(--accent-primary); }
 .main-nav a.active { color: var(--accent-primary); font-weight: 700; }
 
 /* 3. GENERAL CONTENT & SECTIONS */
-.hero, .about-hero, .core-principles, .join-cta, .roadmap-section {
-    padding: 80px 5%;
-}
-
-.hero {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 80vh;
-    /* --- MODIFIED FOR BACKGROUND --- */
-    position: relative;
-    overflow: hidden;
-    background-color: var(--bg-dark); /* Fallback */
-}
-
-/* --- NEW: Galaxy Background Pseudo-element --- */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80');
-    background-size: cover;
-    background-position: center;
-    z-index: 1;
-}
-
-.hero-content { 
-    max-width: 800px;
-    /* --- MODIFIED FOR LAYERING --- */
-    position: relative;
-    z-index: 2;
-}
-
+.hero, .core-principles, .join-cta, .roadmap-section, .page-hero { padding: 80px 5%; }
 h1, h2 { font-family: var(--font-heading); }
 
-/* --- MODIFIED: Hero H1 styles for hierarchy --- */
-.hero-content h1:first-of-type {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    color: var(--text-primary);
-}
-
-.hero h1 { 
-    font-size: 48px; 
-    line-height: 1.2; 
-    margin-bottom: 20px; 
-}
-
-.hero p { 
-    font-size: 18px; 
-    color: var(--text-secondary); 
-    margin-bottom: 40px; 
-}
-
-.about-hero { text-align: center; max-width: 750px; margin: 0 auto; }
-.about-hero h1 { font-size: 42px; line-height: 1.2; margin-bottom: 20px; }
-.about-hero p { font-size: 18px; color: var(--text-secondary); }
+/* Hero Section (Homepage) */
+.hero { display: flex; justify-content: center; align-items: center; text-align: center; min-height: 90vh; color: #fff; position: relative; background-color: var(--bg-dark); }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(18, 18, 18, 0.6), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&q=80'); background-size: cover; background-position: center; z-index: 1; }
+.hero-content { max-width: 800px; position: relative; z-index: 2; }
+.hero h1 { font-size: 48px; line-height: 1.2; margin-bottom: 20px; }
+.hero p { font-size: 18px; color: var(--text-secondary); margin-bottom: 40px; }
+.hero .btn-secondary { color: var(--text-primary); border-color: var(--text-primary); }
+.hero .btn-secondary:hover { background-color: var(--text-primary); color: var(--bg-dark); }
 
 .core-principles, .roadmap-section { text-align: center; }
 .core-principles { background-color: var(--accent-secondary); }
 .core-principles h2, .roadmap-section h2 { font-size: 36px; margin-bottom: 60px; }
 
-.principles-grid, .roadmap-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-.principle-box, .roadmap-phase {
-    background-color: #1f2c3a;
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: left;
-}
+.principles-grid, .roadmap-container { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 1100px; margin: 0 auto; }
+.principle-box, .roadmap-phase { background-color: #1f2c3a; padding: 30px; border-radius: 12px; border: 1px solid #333; transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; }
 .principle-box:hover, .roadmap-phase:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 .principle-box { text-align: center; }
 .principle-icon { margin-bottom: 20px; }
@@ -171,9 +55,6 @@ h1, h2 { font-family: var(--font-heading); }
 .roadmap-phase ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
 .roadmap-phase ul li::before { content: '✓'; color: var(--accent-primary); position: absolute; left: 0; }
 
-.join-cta { text-align: center; }
-.join-cta h2 { font-size: 36px; margin-bottom: 15px; }
-.join-cta p { font-size: 18px; color: var(--text-secondary); max-width: 600px; margin: 0 auto 30px auto; }
 .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
 .cta-buttons a { text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
 .btn-primary { background-color: var(--accent-primary); color: #FFF; }
@@ -181,64 +62,38 @@ h1, h2 { font-family: var(--font-heading); }
 .btn-secondary { background-color: transparent; color: var(--accent-primary); border: 2px solid var(--accent-primary); }
 .btn-secondary:hover { background-color: var(--accent-primary); color: #FFF; }
 
-/* --- NEW: White outline button for Hero section --- */
-.hero .btn-secondary {
-    color: var(--text-primary);
-    border-color: var(--text-primary);
-}
-.hero .btn-secondary:hover {
-    background-color: var(--text-primary);
-    color: var(--bg-dark);
-}
-
 .main-footer { text-align: center; padding: 40px 20px; border-top: 1px solid #222; color: var(--text-secondary); }
 
-/* 4. RESPONSIVE MEDIA QUERIES */
+/* 4. PAGE-SPECIFIC STYLES */
+.page-hero { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 50vh; color: #fff; position: relative; background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
+.page-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(18, 18, 18, 0.7); z-index: 1; }
+.page-hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 5%; }
+.page-hero-content h1 { font-size: 48px; margin-bottom: 15px; }
+.page-hero-content p { font-size: 18px; color: var(--text-secondary); }
 
-/* Tablet & Up */
+
+/* 5. RESPONSIVE MEDIA QUERIES */
 @media (min-width: 768px) {
     .hero h1 { font-size: 54px; }
-    .about-hero h1 { font-size: 48px; }
+    .page-hero-content h1 { font-size: 54px; }
     .principles-grid { grid-template-columns: repeat(3, 1fr); }
     .roadmap-container { grid-template-columns: 1fr 1fr; }
 }
-
-/* Desktop & Up */
 @media (min-width: 1024px) {
     .roadmap-container { grid-template-columns: repeat(4, 1fr); }
 }
-
-/* Mobile Only */
 @media (max-width: 767px) {
     .nav-open-btn { display: block; }
-    .main-nav {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 80%;
-        max-width: 320px;
-        height: 100vh;
-        background-color: var(--accent-secondary);
-        z-index: 1000;
-        padding: 80px 30px 30px;
-        display: flex;
-        flex-direction: column;
-        transform: translateX(100%);
-        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-    }
+    .main-nav { position: fixed; top: 0; right: 0; width: 80%; max-width: 320px; height: 100vh; background-color: var(--accent-secondary); z-index: 1000; padding: 80px 30px 30px; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
     .main-nav.nav-open { transform: translateX(0); }
-    .nav-close-btn {
-        display: block;
-        position: absolute;
-        top: 25px;
-        right: 25px;
-    }
+    .nav-close-btn { display: block; position: absolute; top: 25px; right: 25px; }
     .nav-close-btn svg { stroke: var(--text-secondary); }
     .main-nav ul { flex-direction: column; gap: 25px; }
     .main-nav ul li a { font-size: 20px; }
-
     .hero h1 { font-size: 36px; }
-    .core-principles h2, .roadmap-section h2, .join-cta h2 { font-size: 30px; }
+    .core-principles h2, .roadmap-section h2 { font-size: 30px; }
+    .page-hero { min-height: 40vh; }
+    .page-hero-content h1 { font-size: 36px; }
     .cta-buttons { flex-direction: column; gap: 15px; align-items: center; }
     .cta-buttons a { width: 90%; margin: 0; text-align: center; }
 }
