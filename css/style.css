@@ -25,8 +25,8 @@ body { background-color: var(--bg-dark); color: var(--text-primary); font-family
 .main-nav a.active { color: var(--accent-primary); font-weight: 700; }
 
 /* 3. GENERAL CONTENT & SECTIONS */
-.hero, .core-principles, .join-cta, .roadmap-section, .page-hero { padding: 80px 5%; }
-h1, h2 { font-family: var(--font-heading); }
+.hero, .about-content-section, .core-principles, .features-section, .vision-mission-section, .join-cta, .roadmap-section, .page-hero { padding: 80px 5%; }
+h1, h2, h3 { font-family: var(--font-heading); }
 
 /* Hero Section (Homepage) */
 .hero { display: flex; justify-content: center; align-items: center; text-align: center; min-height: 90vh; color: #fff; position: relative; background-color: var(--bg-dark); }
@@ -37,9 +37,10 @@ h1, h2 { font-family: var(--font-heading); }
 .hero .btn-secondary { color: var(--text-primary); border-color: var(--text-primary); }
 .hero .btn-secondary:hover { background-color: var(--text-primary); color: var(--bg-dark); }
 
-.core-principles, .roadmap-section { text-align: center; }
-.core-principles { background-color: var(--accent-secondary); }
-.core-principles h2, .roadmap-section h2 { font-size: 36px; margin-bottom: 60px; }
+.core-principles, .features-section, .roadmap-section { text-align: center; }
+.core-principles, .features-section { background-color: var(--accent-secondary); }
+h2 { font-size: 36px; margin-bottom: 20px; }
+.section-subtitle { max-width: 700px; margin: 0 auto 50px auto; color: var(--text-secondary); }
 
 .principles-grid, .roadmap-container { display: grid; grid-template-columns: 1fr; gap: 30px; max-width: 1100px; margin: 0 auto; }
 .principle-box, .roadmap-phase { background-color: #1f2c3a; padding: 30px; border-radius: 12px; border: 1px solid #333; transition: transform 0.3s ease, box-shadow 0.3s ease; text-align: left; }
@@ -50,13 +51,14 @@ h1, h2 { font-family: var(--font-heading); }
 .principle-box h3, .roadmap-phase h3 { font-size: 22px; margin-bottom: 10px; }
 .principle-box p, .roadmap-phase p { color: var(--text-secondary); }
 
+.roadmap-section h2 { margin-bottom: 60px; }
 .phase-number { font-size: 24px; font-weight: 700; color: var(--accent-primary); background-color: rgba(74, 144, 226, 0.1); width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; border-radius: 50%; margin-bottom: 20px; }
 .roadmap-phase ul { list-style: none; padding-left: 0; }
 .roadmap-phase ul li { margin-bottom: 10px; padding-left: 20px; position: relative; }
 .roadmap-phase ul li::before { content: '✓'; color: var(--accent-primary); position: absolute; left: 0; }
 
 .cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.cta-buttons a { text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
+.btn-primary, .btn-secondary { text-decoration: none; padding: 15px 30px; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
 .btn-primary { background-color: var(--accent-primary); color: #FFF; }
 .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4); }
 .btn-secondary { background-color: transparent; color: var(--accent-primary); border: 2px solid var(--accent-primary); }
@@ -64,18 +66,30 @@ h1, h2 { font-family: var(--font-heading); }
 
 .main-footer { text-align: center; padding: 40px 20px; border-top: 1px solid #222; color: var(--text-secondary); }
 
-/* 4. PAGE-SPECIFIC STYLES */
+/* 4. PAGE-SPECIFIC STYLES (ABOUT & TECHNOLOGY PAGES) */
+.slogan-banner { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 60vh; color: #fff; position: relative; overflow: hidden; background-color: var(--bg-dark); padding: 40px 5%; }
+.slogan-banner::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(18, 18, 18, 0.6), #121212), url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2071&auto=format&fit=crop'); background-size: cover; background-position: center; z-index: 1; }
+.slogan-content { position: relative; z-index: 2; padding: 20px; border: 4px solid rgba(255, 255, 255, 0.8); background-color: rgba(0, 0, 0, 0.3); backdrop-filter: blur(5px); }
+.slogan-content h1 { font-size: 5vw; text-transform: uppercase; letter-spacing: 4px; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); }
+
+.rocket-svg { position: absolute; width: 50px; height: 50px; color: rgba(255, 255, 255, 0.7); z-index: 2; bottom: 10%; left: 10%; animation: fly-to-moon 8s ease-in-out infinite; }
+@keyframes fly-to-moon { 0% { transform: translate(0, 0) rotate(-45deg); opacity: 0; } 20% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translate(80vw, -45vh) rotate(-45deg); opacity: 0; } }
+
+.about-content-section { text-align: center; max-width: 800px; margin: 0 auto; }
+.about-content-section p { font-size: 1.1rem; color: var(--text-secondary); }
+
+.vision-mission-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.vision-box, .mission-box { background-color: #1f2c3a; padding: 30px; border-radius: 12px; }
+.vision-box h3, .mission-box h3 { font-size: 24px; margin-bottom: 15px; color: var(--accent-primary); }
+
 .page-hero { display: flex; align-items: center; justify-content: center; text-align: center; min-height: 50vh; color: #fff; position: relative; background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
 .page-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(18, 18, 18, 0.7); z-index: 1; }
 .page-hero-content { position: relative; z-index: 2; max-width: 800px; padding: 0 5%; }
 .page-hero-content h1 { font-size: 48px; margin-bottom: 15px; }
 .page-hero-content p { font-size: 18px; color: var(--text-secondary); }
 
-
 /* 5. RESPONSIVE MEDIA QUERIES */
 @media (min-width: 768px) {
-    .hero h1 { font-size: 54px; }
-    .page-hero-content h1 { font-size: 54px; }
     .principles-grid { grid-template-columns: repeat(3, 1fr); }
     .roadmap-container { grid-template-columns: 1fr 1fr; }
 }
@@ -83,6 +97,7 @@ h1, h2 { font-family: var(--font-heading); }
     .roadmap-container { grid-template-columns: repeat(4, 1fr); }
 }
 @media (max-width: 767px) {
+    h2 { font-size: 30px; }
     .nav-open-btn { display: block; }
     .main-nav { position: fixed; top: 0; right: 0; width: 80%; max-width: 320px; height: 100vh; background-color: var(--accent-secondary); z-index: 1000; padding: 80px 30px 30px; display: flex; flex-direction: column; transform: translateX(100%); transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1); }
     .main-nav.nav-open { transform: translateX(0); }
@@ -90,10 +105,11 @@ h1, h2 { font-family: var(--font-heading); }
     .nav-close-btn svg { stroke: var(--text-secondary); }
     .main-nav ul { flex-direction: column; gap: 25px; }
     .main-nav ul li a { font-size: 20px; }
-    .hero h1 { font-size: 36px; }
-    .core-principles h2, .roadmap-section h2 { font-size: 30px; }
-    .page-hero { min-height: 40vh; }
-    .page-hero-content h1 { font-size: 36px; }
+    .hero h1, .page-hero-content h1 { font-size: 36px; }
     .cta-buttons { flex-direction: column; gap: 15px; align-items: center; }
     .cta-buttons a { width: 90%; margin: 0; text-align: center; }
+    
+    .slogan-content h1 { font-size: 8vw; letter-spacing: 2px; }
+    .vision-mission-section { grid-template-columns: 1fr; }
+    .page-hero { min-height: 40vh; }
 }
