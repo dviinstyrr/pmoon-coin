@@ -3,68 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Power Moon - Visi Kami</title>
+    <title>Power Moon - Ride the Power, Reach the Moon</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
+    <!-- BARU: Container untuk animasi partikel universal -->
+    <div id="tsparticles"></div>
+    
     <header class="main-header">
-        <a href="index.html" class="logo">
-            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.981A10.501 10.501 0 0118 19.5a10.5 10.5 0 01-10.5-10.5c0-1.28.22-2.52.618-3.682a.75.75 0 01.819-.162z" clip-rule="evenodd" /><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0z" /></svg>
-            <span>pmoon</span>
-        </a>
-        <nav class="main-nav">
-            <button class="nav-close-btn" aria-label="Tutup menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></button>
-            <ul>
-                <li><a href="tentang.html" class="active">Tentang</a></li>
-                <li><a href="teknologi.html">Teknologi</a></li>
-                <li><a href="index.html#roadmap">Roadmap</a></li>
-                <li><a href="#">Komunitas</a></li>
-                <li><a href="#">FAQ</a></li>
-            </ul>
-        </nav>
-        <button class="nav-open-btn" aria-label="Buka menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></button>
-    </header>
+    <!-- ... sisa konten halaman ... -->
+    <!-- BARU: Library tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
+    
+    <!-- Script utama Anda -->
+    <script src="js/script.js"></script>
+
+    <!-- BARU: Script untuk konfigurasi tsParticles -->
+    <script>
+        // Konfigurasi ini akan berjalan di setiap halaman
+        window.addEventListener('load', () => {
+          tsParticles.load({
+            id: 'tsparticles',
+            options: {
+              background: {
+                color: { value: '#121212' }
+              },
+              fpsLimit: 60,
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: 'repulse' },
+                  onClick: { enable: true, mode: 'push' }
+                },
+                modes: {
+                  repulse: { distance: 100, duration: 0.4 },
+                  push: { quantity: 4 }
+                }
+              },
+              particles: {
+                color: { value: '#ffffff' },
+                links: {
+                  color: '#ffd700', // Warna link diubah jadi emas
+                  distance: 150,
+                  enable: true,
+                  opacity: 0.15,
+                  width: 1
+                },
+                move: {
+                  direction: 'none',
+                  enable: true,
+                  outModes: 'out',
+                  random: false,
+                  speed: 1,
+                  straight: false
+                },
+                number: {
+                  density: { enable: true },
+                  value: 80
+                },
+                opacity: {
+                  value: { min: 0.1, max: 0.5 }
+                },
+                shape: {
+                  type: 'circle'
+                },
+                size: {
+                  value: { min: 1, max: 3 }
+                }
+              }
+            }
+          });
+        });
+    </script>
+</body>
+</html>
+   <header class="main-header">
+    <a href="index.html" class="logo">
+        <!-- BARU: URL Logo Transparan -->
+        <img src="https://i.ibb.co/F8D0W3G/power-moon-logo-transparent.png" alt="Power Moon Logo" class="logo-img">
+        <span class="logo-text">POWER MOON</span>
+    </a>
+    <nav class="main-nav">
+        <!-- ... sisa nav tetap sama ... -->
+    </nav>
+    <!-- ... tombol hamburger tetap sama ... -->
+</header>
 
     <main>
-        <section class="page-hero">
-            <div class="page-hero-content">
-                <h1>Mendefinisikan Ulang Ekonomi Kreatif.</h1>
-                <p>Power Moon lahir dari keyakinan bahwa kreator, seniman, dan inovator berhak mendapatkan kontrol penuh atas karya dan pendapatan mereka.</p>
+        <section class="hero">
+            <!-- BARU: Container untuk animasi partikel -->
+            <div id="tsparticles"></div>
+            <div class="hero-content">
+                <h1>Power Moon</h1>
+                <p>Aset digital terdesentralisasi yang digerakkan oleh komunitas untuk dampak dunia nyata. Ride the Power, Reach the Moon.</p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary">Mulai Sekarang</a>
+                    <a href="tentang.html" class="btn btn-secondary">Pelajari Visi Kami</a>
+                </div>
             </div>
         </section>
-        
-        <section class="core-principles">
-             <h2>Prinsip Inti Kami</h2>
-            <div class="principles-grid">
-                <div class="principle-box">
-                    <div class="principle-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 3.75H19.5M8.25 6.75H19.5M8.25 9.75H19.5M8.25 12.75H19.5M8.25 15.75H19.5M8.25 18.75H19.5M3.75 16.5h.008v.008H3.75v-.008zM3.75 12h.008v.008H3.75v-.008zM3.75 7.5h.008v.008H3.75V7.5z" /></svg></div>
-                    <h3>Desentralisasi Penuh</h3>
-                    <p>Tidak ada otoritas pusat. Jaringan dikelola dan diamankan oleh komunitas global, memastikan keadilan dan ketahanan sensor.</p>
-                </div>
-                <div class="principle-box">
-                    <div class="principle-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a7.5 7.5 0 00-7.5 0" /></svg></div>
-                    <h3>Inovasi Terbuka</h3>
-                    <p>Dibangun di atas fondasi open-source, pmoon mengundang siapa saja untuk berkontribusi, membangun, dan berinovasi di dalam ekosistem.</p>
-                </div>
-                <div class="principle-box">
-                    <div class="principle-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.228a4.5 4.5 0 00-1.897 1.897M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.228a4.5 4.5 0 00-1.897 1.897M15.75 15.75l-2.4-2.4" /></svg></div>
-                    <h3>Berpusat pada Komunitas</h3>
-                    <p>Masa depan pmoon ditentukan oleh pemegangnya melalui tata kelola terdesentralisasi (DAO), bukan oleh segelintir orang.</p>
-                </div>
+
+        <section id="roadmap" class="roadmap-section">
+            <h2>Roadmap Proyek</h2>
+            <div class="roadmap-container">
+                <div class="roadmap-phase"><div class="phase-number">1</div><h3>Fase 1: Fondasi</h3><p>Q4 2023 - Q1 2024</p><ul><li>Riset & Konsep</li><li>Rilis Whitepaper v1.0</li><li>Peluncuran Website</li></ul></div>
+                <div class="roadmap-phase"><div class="phase-number">2</div><h3>Fase 2: Pertumbuhan</h3><p>Q2 2024 - Q3 2024</p><ul><li>Audit Smart Contract</li><li>Peluncuran Token</li><li>Listing di DEX</li></ul></div>
+                <div class="roadmap-phase"><div class="phase-number">3</div><h3>Fase 3: Ekspansi</h3><p>Q4 2024 - Q2 2025</p><ul><li>Kemitraan Strategis</li><li>Pengembangan dApp</li><li>Listing di CEX</li></ul></div>
+                <div class="roadmap-phase"><div class="phase-number">4</div><h3>Fase 4: Desentralisasi</h3><p>Q3 2025+</p><ul><li>Pembentukan DAO</li><li>Tata Kelola Komunitas</li><li>Inovasi Berkelanjutan</li></ul></div>
             </div>
         </section>
     </main>
 
     <footer class="main-footer">
-        <p>© 2023 pmoon Project. Semua hak dilindungi.</p>
+        <p>© 2023 Power Moon Project. Semua hak dilindungi.</p>
     </footer>
 
+    <!-- BARU: Library tsParticles -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
+    
+    <!-- Script utama Anda (tetap ada) -->
     <script src="js/script.js"></script>
+
+    <!-- BARU: Script untuk konfigurasi tsParticles -->
+    <script>
+        window.addEventListener('load', () => {
+          tsParticles.load({
+            id: 'tsparticles',
+            options: {
+              background: {
+                color: { value: '#121212' }
+              },
+              fpsLimit: 60,
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: 'repulse' },
+                  onClick: { enable: true, mode: 'push' }
+                },
+                modes: {
+                  repulse: { distance: 100, duration: 0.4 },
+                  push: { quantity: 4 }
+                }
+              },
+              particles: {
+                color: { value: '#ffffff' },
+                links: {
+                  color: '#4A90E2',
+                  distance: 150,
+                  enable: true,
+                  opacity: 0.2,
+                  width: 1
+                },
+                move: {
+                  direction: 'none',
+                  enable: true,
+                  outModes: 'out',
+                  random: false,
+                  speed: 1,
+                  straight: false
+                },
+                number: {
+                  density: { enable: true },
+                  value: 80
+                },
+                opacity: {
+                  value: { min: 0.1, max: 0.5 }
+                },
+                shape: {
+                  type: 'circle'
+                },
+                size: {
+                  value: { min: 1, max: 3 }
+                }
+              }
+            }
+          });
+        });
+    </script>
 </body>
 </html>
