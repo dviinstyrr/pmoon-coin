@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Terbaru - Power Moon</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Latar Belakang Animasi Universal -->
+    <div id="tsparticles"></div>
+
+    <header class="main-header">
+        <a href="index.html" class="logo">
+            <img src="https://i.ibb.co/F8D0W3G/power-moon-logo-transparent.png" alt="Power Moon Logo" class="logo-img">
+            <span class="logo-text">POWER MOON</span>
+        </a>
+        <nav class="main-nav">
+            <button class="nav-close-btn" aria-label="Tutup menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg></button>
+            <ul>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="teknologi.html">Teknologi</a></li>
+                <!-- BARU: Link ke halaman berita -->
+                <li><a href="berita.html" class="active">Berita</a></li>
+                <li><a href="index.html#roadmap">Roadmap</a></li>
+            </ul>
+        </nav>
+        <button class="nav-open-btn" aria-label="Buka menu"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></button>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="hero-content">
+                <h1>Berita & Pengumuman</h1>
+                <p>Ikuti perkembangan terbaru dari ekosistem Power Moon.</p>
+            </div>
+        </section>
+
+        <section id="news-container" class="news-section">
+            <!-- Berita akan dimuat di sini oleh JavaScript -->
+            <div class="loading-spinner"></div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2023 Power Moon Project. Semua hak dilindungi.</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@3.1.0/tsparticles.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/berita.js"></script> <!-- File JS baru untuk berita -->
+    <script>
+        window.addEventListener('load', () => { tsParticles.load({ id: 'tsparticles', options: { background: { color: { value: '#121212' } }, fpsLimit: 60, interactivity: { events: { onHover: { enable: true, mode: 'repulse' }, onClick: { enable: true, mode: 'push' } }, modes: { repulse: { distance: 100, duration: 0.4 }, push: { quantity: 4 } } }, particles: { color: { value: '#ffffff' }, links: { color: '#ffd700', distance: 150, enable: true, opacity: 0.15, width: 1 }, move: { direction: 'none', enable: true, outModes: 'out', random: false, speed: 1, straight: false }, number: { density: { enable: true }, value: 80 }, opacity: { value: { min: 0.1, max: 0.5 } }, shape: { type: 'circle' }, size: { value: { min: 1, max: 3 } } } } }); });
+    </script>
+</body>
+</html>
